@@ -195,3 +195,88 @@ h2::after {
     font-size: 14px;
     color: #0f60c9;
 }
+
+
+
+
+
+
+/*?--------------------------------------------------- Media Queries for Responsive Design */
+
+@media (min-width: 1200px) {
+    .carousel .item {
+        padding: 0 15px;
+    }
+
+    .carousel .item .thumb-wrapper {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .carousel {
+        padding: 0 30px;
+    }
+
+    .carousel .item {
+        padding: 0 10px;
+    }
+
+    .carousel .item .thumb-wrapper {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .carousel {
+        padding: 0 15px;
+    }
+
+    .carousel .item {
+        padding: 0 5px;
+    }
+
+    .carousel .item .thumb-wrapper {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel {
+        padding: 0;
+    }
+
+    .carousel .item {
+        padding: 0;
+    }
+
+    .carousel .item .thumb-wrapper {
+        padding: 5px;
+        width: 80%;
+        left: 10%;
+    }
+
+    .carousel .item h4 {
+        font-size: 12px;
+    }
+
+    .carousel .thumb-content .btn {
+        font-size: 10px;
+    }
+
+    .carousel .item-price {
+        font-size: 11px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel-control-prev i,
+    .carousel-control-next i {
+        font-size: 20px;
+        top: 22px;
+    }
+}
