@@ -56,31 +56,38 @@ function createCarousel(products) {
       col.className = "col-md-" + 12 / itemsPerSlide + " col-sm-6 col-xs-12";
 
       col.innerHTML = `
-                        <div class="thumb-wrapper">
-                            <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                            <div class="img-box">
-                                <img src="${
-                                  product.image
-                                }" class="img-fluid" alt="${product.title}">
-                            </div>
-                            <div class="thumb-content">
-                                <h4>${product.title}</h4>
-                                <div class="star-rating">
-                                    <ul class="list-inline">
-                                        ${generateStars(product.rating.rate)}
-                                    </ul>
-                                </div>
-                                <p class="item-price"><strike>$${(
-                                  product.price * 1.1
-                                ).toFixed(
-                                  2
-                                )}</strike> <b>$${product.price.toFixed(
-                                                                            2
-                                                                          )}</b></p>
-                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                            </div>						
-                        </div>
-                    `;
+  <div class="thumb-wrapper">
+    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+    <div class="img-box">
+      <img src="${product.image}" class="img-fluid" alt="${product.title}">
+    </div>
+    <div class="thumb-content">
+      <h4>${product.title}</h4>
+      <div class="star-rating">
+        <ul class="list-inline">
+          ${generateStars(product.rating.rate)}
+        </ul>
+      </div>
+      <p class="item-price"><strike>$${(product.price * 1.1).toFixed(
+        2
+      )}</strike> <b>$${product.price.toFixed(2)}</b></p>
+      <a href="#" class="btn btn-primary show-count-btn">Show count</a>
+      <p class="product-quantity" style="display: none;">count: ${
+        product.rating.count
+      }</p>
+    </div>
+  </div>
+`;
+
+      document.body.appendChild(col);
+
+      const showCountButton = col.querySelector(".show-count-btn");
+      const quantityElement = col.querySelector(".product-quantity");
+
+      showCountButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        quantityElement.style.display = "block";
+      });
 
       row.appendChild(col);
     }
